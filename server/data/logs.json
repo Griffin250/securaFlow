@@ -1,0 +1,302 @@
+[
+  {
+    "user": "anna.smith",
+    "kiosk": "Oslo-04",
+    "status": "failed",
+    "timestamp": "2025-05-08T05:13:25.261216Z"
+  },
+  {
+    "user": "tom.jensen",
+    "kiosk": "Madrid-03",
+    "status": "success",
+    "timestamp": "2025-05-07T07:40:25.261216Z"
+  },
+  {
+    "user": "ahmed.khan",
+    "kiosk": "Madrid-03",
+    "status": "success",
+    "timestamp": "2025-05-07T21:13:25.261216Z"
+  },
+  {
+    "user": "griffin.techs",
+    "kiosk": "NewYork-07",
+    "status": "failed",
+    "timestamp": "2025-05-07T17:38:25.261216Z"
+  },
+  {
+    "user": "anna.smith",
+    "kiosk": "NewYork-07",
+    "status": "success",
+    "timestamp": "2025-05-07T14:22:25.261216Z"
+  },
+  {
+    "user": "ahmed.khan",
+    "kiosk": "Berlin-12",
+    "status": "success",
+    "timestamp": "2025-05-07T19:19:25.261216Z"
+  },
+  {
+    "user": "griffin.techs",
+    "kiosk": "Madrid-03",
+    "status": "success",
+    "timestamp": "2025-05-07T19:00:25.261216Z"
+  },
+  {
+    "user": "tom.jensen",
+    "kiosk": "Madrid-03",
+    "status": "failed",
+    "timestamp": "2025-05-07T07:07:25.261216Z"
+  },
+  {
+    "user": "anna.smith",
+    "kiosk": "NewYork-07",
+    "status": "success",
+    "timestamp": "2025-05-08T00:46:25.261216Z"
+  },
+  {
+    "user": "maria.gomez",
+    "kiosk": "Tokyo-08",
+    "status": "success",
+    "timestamp": "2025-05-07T23:20:25.261216Z"
+  },
+  {
+    "user": "maria.gomez",
+    "kiosk": "Berlin-12",
+    "status": "success",
+    "timestamp": "2025-05-07T11:46:25.261216Z"
+  },
+  {
+    "user": "li.wei",
+    "kiosk": "Shanghai-01",
+    "status": "success",
+    "timestamp": "2025-05-07T20:03:25.261216Z"
+  },
+  {
+    "user": "ahmed.khan",
+    "kiosk": "Berlin-12",
+    "status": "success",
+    "timestamp": "2025-05-07T15:46:25.261216Z"
+  },
+  {
+    "user": "sara.nilsen",
+    "kiosk": "CapeTown-02",
+    "status": "failed",
+    "timestamp": "2025-05-07T13:15:25.261216Z"
+  },
+  {
+    "user": "anna.smith",
+    "kiosk": "Tokyo-08",
+    "status": "success",
+    "timestamp": "2025-05-07T19:53:25.261216Z"
+  },
+  {
+    "user": "li.wei",
+    "kiosk": "Madrid-03",
+    "status": "success",
+    "timestamp": "2025-05-08T01:02:25.261216Z"
+  },
+  {
+    "user": "sara.nilsen",
+    "kiosk": "NewYork-07",
+    "status": "success",
+    "timestamp": "2025-05-07T09:48:25.261216Z"
+  },
+  {
+    "user": "maria.gomez",
+    "kiosk": "CapeTown-02",
+    "status": "success",
+    "timestamp": "2025-05-07T19:55:25.261216Z"
+  },
+  {
+    "user": "sara.nilsen",
+    "kiosk": "Oslo-04",
+    "status": "success",
+    "timestamp": "2025-05-07T13:12:25.261216Z"
+  },
+  {
+    "user": "maria.gomez",
+    "kiosk": "Berlin-12",
+    "status": "success",
+    "timestamp": "2025-05-08T01:27:25.261216Z"
+  },
+  {
+    "user": "tom.jensen",
+    "kiosk": "Tokyo-08",
+    "status": "success",
+    "timestamp": "2025-05-07T13:31:25.261216Z"
+  },
+  {
+    "user": "griffin.techs",
+    "kiosk": "Oslo-04",
+    "status": "success",
+    "timestamp": "2025-05-07T12:02:25.261216Z"
+  },
+  {
+    "user": "li.wei",
+    "kiosk": "Berlin-12",
+    "status": "failed",
+    "timestamp": "2025-05-07T08:16:25.261216Z"
+  },
+  {
+    "user": "griffin.techs",
+    "kiosk": "Madrid-03",
+    "status": "success",
+    "timestamp": "2025-05-07T21:35:25.261216Z"
+  },
+  {
+    "user": "ahmed.khan",
+    "kiosk": "Tokyo-08",
+    "status": "success",
+    "timestamp": "2025-05-08T02:28:25.261216Z"
+  },
+  {
+    "user": "li.wei",
+    "kiosk": "Berlin-12",
+    "status": "success",
+    "timestamp": "2025-05-08T05:53:25.261216Z"
+  },
+  {
+    "user": "maria.gomez",
+    "kiosk": "Berlin-12",
+    "status": "success",
+    "timestamp": "2025-05-07T07:25:25.261216Z"
+  },
+  {
+    "user": "tom.jensen",
+    "kiosk": "Madrid-03",
+    "status": "success",
+    "timestamp": "2025-05-08T05:17:25.261216Z"
+  },
+  {
+    "user": "anna.smith",
+    "kiosk": "NewYork-07",
+    "status": "success",
+    "timestamp": "2025-05-07T23:07:25.261216Z"
+  },
+  {
+    "user": "ahmed.khan",
+    "kiosk": "Shanghai-01",
+    "status": "success",
+    "timestamp": "2025-05-07T07:13:25.261216Z"
+  },
+  {
+    "user": "griffin.techs",
+    "kiosk": "Madrid-03",
+    "status": "success",
+    "timestamp": "2025-05-07T23:06:25.261216Z"
+  },
+  {
+    "user": "anna.smith",
+    "kiosk": "Berlin-12",
+    "status": "success",
+    "timestamp": "2025-05-07T20:00:25.261216Z"
+  },
+  {
+    "user": "sara.nilsen",
+    "kiosk": "Berlin-12",
+    "status": "success",
+    "timestamp": "2025-05-07T09:53:25.261216Z"
+  },
+  {
+    "user": "tom.jensen",
+    "kiosk": "Oslo-04",
+    "status": "success",
+    "timestamp": "2025-05-07T19:24:25.261216Z"
+  },
+  {
+    "user": "li.wei",
+    "kiosk": "Berlin-12",
+    "status": "failed",
+    "timestamp": "2025-05-07T07:58:25.261216Z"
+  },
+  {
+    "user": "maria.gomez",
+    "kiosk": "Shanghai-01",
+    "status": "success",
+    "timestamp": "2025-05-07T20:57:25.261216Z"
+  },
+  {
+    "user": "griffin.techs",
+    "kiosk": "Berlin-12",
+    "status": "success",
+    "timestamp": "2025-05-07T12:20:25.261216Z"
+  },
+  {
+    "user": "tom.jensen",
+    "kiosk": "CapeTown-02",
+    "status": "success",
+    "timestamp": "2025-05-08T04:52:25.261216Z"
+  },
+  {
+    "user": "sara.nilsen",
+    "kiosk": "NewYork-07",
+    "status": "success",
+    "timestamp": "2025-05-08T02:51:25.261216Z"
+  },
+  {
+    "user": "li.wei",
+    "kiosk": "CapeTown-02",
+    "status": "success",
+    "timestamp": "2025-05-07T09:47:25.261216Z"
+  },
+  {
+    "user": "sara.nilsen",
+    "kiosk": "Shanghai-01",
+    "status": "success",
+    "timestamp": "2025-05-07T18:13:25.261216Z"
+  },
+  {
+    "user": "maria.gomez",
+    "kiosk": "Tokyo-08",
+    "status": "success",
+    "timestamp": "2025-05-07T21:12:25.261216Z"
+  },
+  {
+    "user": "anna.smith",
+    "kiosk": "Shanghai-01",
+    "status": "success",
+    "timestamp": "2025-05-08T06:11:25.261216Z"
+  },
+  {
+    "user": "ahmed.khan",
+    "kiosk": "Tokyo-08",
+    "status": "success",
+    "timestamp": "2025-05-07T18:24:25.261216Z"
+  },
+  {
+    "user": "maria.gomez",
+    "kiosk": "Berlin-12",
+    "status": "success",
+    "timestamp": "2025-05-07T10:37:25.261216Z"
+  },
+  {
+    "user": "ahmed.khan",
+    "kiosk": "Oslo-04",
+    "status": "success",
+    "timestamp": "2025-05-07T14:50:25.261216Z"
+  },
+  {
+    "user": "sara.nilsen",
+    "kiosk": "NewYork-07",
+    "status": "success",
+    "timestamp": "2025-05-08T01:39:25.261216Z"
+  },
+  {
+    "user": "maria.gomez",
+    "kiosk": "Oslo-04",
+    "status": "success",
+    "timestamp": "2025-05-07T06:57:25.261216Z"
+  },
+  {
+    "user": "sara.nilsen",
+    "kiosk": "Tokyo-08",
+    "status": "failed",
+    "timestamp": "2025-05-07T21:13:25.261216Z"
+  },
+  {
+    "user": "sara.nilsen",
+    "kiosk": "Madrid-03",
+    "status": "failed",
+    "timestamp": "2025-05-07T08:32:25.261216Z"
+  }
+]
