@@ -1,11 +1,27 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Custom styles */
+.active{
+    color:orangered;
+}
+.title.active{
+    color:whitesmoke;
+}
 body {
-  @apply bg-gray-50 text-gray-900;
-  font-family: 'Inter', sans-serif;
+    transition: background-color .5s, color .5s ease-in;
+  }
+  
+ 
+  html{
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    width: 4px; 
+    height: 2px; 
+    cursor: pointer;
+  }
+::-webkit-scrollbar-thumb{
+    background: rgb(255, 42, 0);
+    border-radius: 8px;
 }
 
-/* Add any other global styles here */
+
