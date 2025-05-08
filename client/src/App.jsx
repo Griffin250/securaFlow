@@ -5,11 +5,12 @@ import Footer from './components/Footer'
 import Home from './components/pages/Home'
 import Dashboard from "./components/pages/Dashboard"
 import NotFound from "./components/pages/NotFound"
+import Sidebar from './components/Sidebar';
 const App = () => {
   return (
     <div> 
     <Navbar />
-  
+    <Sidebar />
     <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/dashboard" element={<Dashboard />} />
