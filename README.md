@@ -51,6 +51,51 @@ Secura Flow is a modern security monitoring dashboard built with React and Tailw
    http://localhost:5173
    ```
 
+
+### Docker Deployment
+
+1. **Prerequisites**:
+   - Install [Docker](https://docs.docker.com/get-docker/)
+   - Install [Docker Compose](https://docs.docker.com/compose/install/)
+
+2. **Environment Setup**:
+   ```bash
+   cp keycloak/.env.example keycloak/.env
+   cp server/.env.example server/.env
+   # Edit both .env files with your configuration
+   ```
+
+3. **Build and Run**:
+   ```bash
+   docker-compose up --build
+   ```
+   - Runs all services (frontend, backend, Keycloak)
+   - Frontend will be available at `http://localhost:3000`
+   - Backend API at `http://localhost:5000`
+   - Keycloak admin at `http://localhost:8080`
+
+4. **Production Build**:
+   ```bash
+   docker-compose -f docker-compose.prod.yml up --build -d
+   ```
+
+5. **Common Commands**:
+   ```bash
+   # Stop all services
+   docker-compose down
+
+   # View logs
+   docker-compose logs -f
+
+   # Rebuild specific service
+   docker-compose up --build client
+   ```
+
+6. **Troubleshooting**:
+   - If ports are occupied: `docker-compose down` then retry
+   - Reset containers: `docker-compose down -v`
+
+- Note: First build may take several minutes to download dependencies and images.
 #### Project Structure
 
 ```
