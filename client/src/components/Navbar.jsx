@@ -1,3 +1,5 @@
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { NavLink } from "react-router-dom";
 const Navbar = () => {
@@ -18,26 +20,31 @@ const Navbar = () => {
               d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
             />
           </svg>
-          <span className="text-2xl font-bold"><NavLink to="/" className="title"> Secura Flow</NavLink></span>
+          <span className="text-3xl font-bold">
+            <NavLink to="/" className="title">
+              {" "}
+              SecuraFlow
+            </NavLink>
+          </span>
         </div>
 
         <div className="hidden md:flex space-x-6">
-          <NavLink className="hover:text-blue-400" to="/">
+          <NavLink className="hover:text-blue-400 font-bold" to="/">
             Home
           </NavLink>
-          <NavLink className="hover:text-blue-400" to="/dashboard">
+          <NavLink className="hover:text-blue-400 font-bold" to="/dashboard">
             Dashboard
           </NavLink>
-          <NavLink className="hover:text-blue-400" to="/alerts">
+          <NavLink className="hover:text-blue-400 font-bold" to="/alerts">
             Alerts
           </NavLink>
-          <NavLink className="hover:text-blue-400" to="/reports">
+          <NavLink className="hover:text-blue-400 font-bold" to="/reports">
             Reports
           </NavLink>
-          <NavLink className="hover:text-blue-400" to="/profileboard">
+          <NavLink className="hover:text-blue-400 font-bold" to="/profiledashboard">
             Profile
           </NavLink>
-          <NavLink className="hover:text-blue-400" to="/settings">
+          <NavLink className="hover:text-blue-400 font-bold" to="/settings">
             Settings
           </NavLink>
         </div>
@@ -47,8 +54,8 @@ const Navbar = () => {
             <span className="absolute -top-2 -right-2 bg-red-500 text-xs rounded-full h-5 w-5 flex items-center justify-center">
               3
             </span>
-            <svg
-              className="w-6 h-6"
+            <NavLink to="/alerts" className="bell-icon"> <svg
+              className="w-7 h-7"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -59,11 +66,26 @@ const Navbar = () => {
                 strokeWidth={2}
                 d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
               />
-            </svg>
+            </svg></NavLink>
+            
           </div>
           <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">
-            <span className="text-sm font-bold">TM</span>
+            <span className="text-sm font-bold">
+              {" "}
+              <FontAwesomeIcon icon={faUser} className="text-white text-xl" />
+            </span>
           </div>
+
+          <label className="relative inline-flex items-center cursor-pointer">
+          <input
+            type="checkbox"
+            value=""
+            className="sr-only peer"
+        
+          />
+
+          <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none dark:bg-gray-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-orange-600"></div>
+        </label>
         </div>
       </div>
     </nav>

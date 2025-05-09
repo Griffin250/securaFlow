@@ -8,8 +8,6 @@ Create a new file at the root of your project named `README.md`:
 ```markdown
 # Secura Flow - Security Monitoring Dashboard
 
-![Secura Flow Screenshot](screenshot.png) <!-- Add a screenshot later -->
-
 Secura Flow is a modern security monitoring dashboard built with React and Tailwind CSS. It provides real-time threat detection, access control, and comprehensive security analytics.
 
 ## Features
@@ -33,7 +31,7 @@ Secura Flow is a modern security monitoring dashboard built with React and Tailw
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/secura-flow.git
+   git clone https://github.com/yourusername/securaflow.git
    cd secura-flow
    ```
 
@@ -49,42 +47,71 @@ Secura Flow is a modern security monitoring dashboard built with React and Tailw
 
 4. Open your browser at:
    ```
-   http://localhost:3000
+   http://localhost:5173
    ```
 
-## Project Structure
+#### Project Structure
 
 ```
-src/
-├── components/        # Reusable components
-│   ├── Navbar.jsx     # Main navigation
-│   ├── Sidebar.jsx    # Dashboard sidebar
-│   ├── AlertCard.jsx  # Alert component
-│   └── Footer.jsx     # Site footer
-├── pages/             # Page components
-│   ├── HomePage.jsx   # Landing page
-│   ├── Dashboard.jsx  # Main dashboard
-│   └── NotFound.jsx   # 404 page
-├── App.js             # Main app with routes
-└── index.js           # Entry point
-
-//// Beta version.
-src/
-├── components/
-│   ├── Navbar.jsx
-│   ├── Sidebar.jsx
-│   ├── SecurityDashboard.jsx
-│   ├── AlertCard.jsx
-│   ├── AccessControlPanel.jsx
-│   └── ActivityLog.jsx
-├── pages/
-│   ├── Dashboard.jsx
-│   ├── Alerts.jsx
-│   ├── Settings.jsx
-│   └── Reports.jsx
-├── App.js
-├── index.js
-└── index.css
+SECURAFLOW/
+├── client/                      # Frontend React application
+│   ├── public/                  # Static assets
+│   ├── src/
+│   │   ├── assets/              # Images, fonts, etc.
+│   │   ├── components/          # Reusable UI components
+│   │   │   │   ├── Footer.jsx
+│   │   │   │   ├── Navbar.jsx
+│   │   │   │   └── Sidebar.jsx
+│   │   │   ├── advanced/        # Specialized security components
+│   │   │   │   ├── CrisisModeToggle.jsx
+│   │   │   │   ├── DarkWebMonitor.jsx
+│   │   │   │   ├── SecurityCoach.jsx
+│   │   │   │   ├── ThreatPrediction.jsx
+│   │   │   │   └── VRThreatViz.jsx
+│   │   │   ├── ui/              # Base UI components
+│   │   │   │   └── NotFoundAnimation.json # Lottie animation
+│   │   ├── pages/               # Page components
+│   │   │   ├── Alerts.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Home.jsx
+│   │   │   ├── NotFound.jsx
+│   │   │   ├── Profile.jsx
+│   │   │   ├── Reports.jsx
+│   │   │   └── Settings.jsx
+│   │   ├── services/            # API services
+│   │   ├── utils/               # Utility functions
+│   │   ├── App.jsx              # Main app component
+│   │   ├── index.css            # Global styles
+│   │   ├── main.jsx             # Entry point
+│   │   └── keycloak.js          # Auth configuration
+│   │   ├──Dockerfile            # Docker configurations for frontend
+│   ├── .eslintrc.js             # ESLint config
+│   ├── vite.config.js           # Vite config
+│   └── package.json
+│   └── package-lock.json
+├── server/                      # Backend Node.js server
+│   ├── config/                  # Configuration files
+│   ├── controllers/             # Route controllers
+│   ├── models/                  # Data models
+│   ├── routes/                  # API routes
+│   ├── services/                # Business logic
+│   ├── utils/                   # Utility functions
+│   ├── data/                    # Data files
+│   │   └── logs.json            # Log data
+│   ├── generate_logs.py         # Log generation script
+│   ├── index.js                 # Server entry point
+│   └── package.json
+│   ├──Dockerfile                # Docker configurations for servers
+│
+├── keycloak/                    # Keycloak configuration
+│   └── .env                     # Keycloak environment variables
+│                      
+│  
+└── nginx.conf
+│
+├── .gitignore
+├── docker-compose.yml           # Full stack Docker configurations
+├── README.md                    # Project documentation
 
 
 ```

@@ -6,6 +6,9 @@
 .title.active{
     color:whitesmoke;
 }
+.bell-icon.active{
+    color:whitesmoke;
+}
 body {
     transition: background-color .5s, color .5s ease-in;
   }

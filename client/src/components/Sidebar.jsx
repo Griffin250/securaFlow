@@ -2,7 +2,7 @@ import React from 'react';
 
 const Sidebar = () => {
   return (
-    <aside className="w-64 bg-gray-800 text-gray-300 h-2/4 fixed block md:hidden">
+    <aside className="w-64 bg-gray-800 text-gray-300 h-2/4 fixed hidden md:hidden">
       <div className="p-4">
         <div className="mt-8">
           <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Main</h3>
