@@ -27,13 +27,13 @@ const Home = () => {
 
           <h1 className="text-5xl font-bold mb-6 text-gray-900">SecuraFlow</h1>
           <p className="text-xl text-gray-600 mb-10">
-            Advanced security monitoring and threat detection for modern
+            This is an Advanced security monitoring and threat detection for modern
             applications
           </p>
           <p className="text-xl text-gray-600 mb-6">
             Enterprise-Grade Security Intelligence Platform
           </p>
-          <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto ">
             Secura Flow provides comprehensive protection for your digital
             assets with real-time threat detection, automated compliance
             reporting, and intelligent access controls. Our AI-powered platform
@@ -60,7 +60,7 @@ const Home = () => {
 
       {/* Features Section */}
       <div className="container mx-auto px-6 py-16">
-        <h2 className="md:text-3xl text-xl font-bold text-center mb-16">
+        <h2 className="md:text-3xl font-bold text-center mb-16">
           <span className="border-b-2 border-blue-500 pb-2">
             Comprehensive Security Solutions
           </span>
@@ -109,7 +109,7 @@ const Home = () => {
       {/* How It Works Section */}
       <div className="bg-gray-50 py-16">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-16">
+          <h2 className="md:text-3xl font-bold text-center mb-16">
             <span className="border-b-2 border-blue-500 pb-2">
               How Secura Flow Works
             </span>

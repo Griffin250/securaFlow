@@ -13,7 +13,7 @@ import VisitorTracker from "./components/pages/VisitorTracker";
 import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
 
-
+import ActivityMap from "./components/pages/ActivityMap";
 const App = () => {
   return (
     <div>
@@ -29,7 +29,7 @@ const App = () => {
         <Route path="/visitortracker" element={<VisitorTracker />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        
+        <Route path="/activitymap" element={<ActivityMap/>}/>
       </Routes>
       <Footer />
     </div>

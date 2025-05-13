@@ -1,17 +1,31 @@
 import { faUser, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect } from "react";
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  useEffect(() =>{
+const handleScroll = () =>{
+  if(window.scrollY > lastScrollY){
+    setShowNavbar(false);
+  } else 
+  setShowNavbar(true);
+  setLastScrollY(window.scrollY);
+};
+window.addEventListener("scroll", handleScroll);
+return () => window.removeEventListener("scroll", handleScroll);
+  },[lastScrollY])
+
   return (
-    <nav className="bg-gray-900 text-white p-4 shadow-md">
+    <nav className={`bg-gray-900 text-white fixed p-4 shadow-md w-full transition-transform z-50 duration-300 ${showNavbar ?  "translate-y-0" : "-translate-y-full"}`}>
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo Section */}
         <div className="flex items-center space-x-2">
