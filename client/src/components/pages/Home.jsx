@@ -60,7 +60,7 @@ const Home = () => {
 
       {/* Features Section */}
       <div className="container mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold text-center mb-16">
+        <h2 className="md:text-3xl text-xl font-bold text-center mb-16">
           <span className="border-b-2 border-blue-500 pb-2">
             Comprehensive Security Solutions
           </span>
@@ -162,7 +162,7 @@ const Home = () => {
 
       {/* Stats Section */}
       <div className="container mx-auto px-6 py-16 bg-white">
-        <h2 className="text-3xl font-bold text-center mb-16">
+        <h2 className="md:text-3xl text-xl font-bold text-center mb-16">
           <span className="border-b-2 border-blue-500 pb-2">
             Trusted by Security Teams
           </span>

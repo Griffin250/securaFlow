@@ -1,0 +1,3 @@
+# .nixpacks
+[build]
+providers = ["docker-compose"]

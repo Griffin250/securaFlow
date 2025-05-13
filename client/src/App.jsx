@@ -9,6 +9,11 @@ import Sidebar from "./components/Sidebar";
 import Reports from "./components/pages/Reports";
 import Alert from "./components/pages/Alert";
 import Settings from "./components/pages/Settings";
+import VisitorTracker from "./components/pages/VisitorTracker";
+import Login from "./components/pages/Login";
+import Register from "./components/pages/Register";
+
+
 const App = () => {
   return (
     <div>
@@ -21,6 +26,10 @@ const App = () => {
         <Route path="/reports" element={<Reports />} />
         <Route path="/alerts" element={<Alert />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/visitortracker" element={<VisitorTracker />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        
       </Routes>
       <Footer />
     </div>
