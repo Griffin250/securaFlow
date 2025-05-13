@@ -38,6 +38,17 @@ const ActivityMap = () => {
             ip: '95.173.136.72',
             userAgent: 'TOR Browser'
           },
+             {
+            id: 3,
+            type: 'failed_login',
+            status: 'high_risk',
+            city: 'Stockholm',
+            country: 'Sweden',
+            coordinates: [37.6176, 55.7558],
+            timestamp: new Date().toISOString(),
+            ip: '95.173.136.72',
+            userAgent: 'TOR Browser'
+          },
           // Add more sample data...
         ];
         
@@ -75,9 +86,9 @@ const ActivityMap = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-20">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold text-gray-800">
+        <h2 className="md:text-2xl text-sm font-bold text-gray-800">
           Global Activity Monitor
           <span className="ml-2 text-sm font-normal text-gray-500">
             {events.length} events in last 24h
@@ -96,7 +107,7 @@ const ActivityMap = () => {
       </div>
 
       {isLoading ? (
-        <div className="flex justify-center items-center h-96">
+        <div className="flex justify-center items-center h-full">
           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
         </div>
       ) : (
@@ -157,9 +168,9 @@ const ActivityMap = () => {
             </div>
           </div>
           
-          <div className="p-4 border-t border-gray-200">
-            <h3 className="font-medium">Activity Summary</h3>
-            <div className="grid grid-cols-4 gap-4 mt-2">
+          <div className="p-4 md:mt-32 border-t border-gray-200">
+            <h3 className="font-bold text-center md:text-left">Activity Summary</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-2">
               <div className="bg-blue-50 p-3 rounded-lg">
                 <p className="text-sm text-gray-500">Total Events</p>
                 <p className="text-xl font-bold">{events.length}</p>

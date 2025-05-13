@@ -8,6 +8,12 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const scrollToTop = () => {
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    })
+  }
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -51,34 +57,34 @@ return () => window.removeEventListener("scroll", handleScroll);
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-6">
-          <NavLink className="hover:text-blue-400 font-bold" to="/">
+          <NavLink className="hover:text-blue-400 font-bold" to="/" onClick={scrollToTop}>
             Home
           </NavLink>
-          <NavLink className="hover:text-blue-400 font-bold" to="/dashboard">
+          <NavLink className="hover:text-blue-400 font-bold" to="/dashboard" onClick={scrollToTop}>
             Dashboard
           </NavLink>
-          <NavLink className="hover:text-blue-400 font-bold" to="/alerts">
+          <NavLink className="hover:text-blue-400 font-bold" to="/alerts" onClick={scrollToTop}>
             Alerts
           </NavLink>
-          <NavLink className="hover:text-blue-400 font-bold" to="/reports">
+          <NavLink className="hover:text-blue-400 font-bold" to="/reports" onClick={scrollToTop}>
             Reports
           </NavLink>
-          <NavLink className="hover:text-blue-400 font-bold" to="/activitymap">
+          <NavLink className="hover:text-blue-400 font-bold" to="/activitymap" onClick={scrollToTop}>
             Map
           </NavLink>
-          <NavLink className="hover:text-blue-400 font-bold" to="/settings">
+          <NavLink className="hover:text-blue-400 font-bold" to="/settings" onClick={scrollToTop}>
             Settings
           </NavLink>
-          <NavLink className="hover:text-blue-400 font-bold" to="visitortracker">
+          <NavLink className="hover:text-blue-400 font-bold" to="visitortracker" onClick={scrollToTop}>
             IP Logger
           </NavLink>
           <div className="flex space-x-4">
-            <NavLink to="/login" className="cursor-pointer">
+            <NavLink to="/login" className="cursor-pointer" onClick={scrollToTop}>
               <button className="px-4 py-2 text-sm cursor-pointer font-medium bg-gray-400 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition duration-150 ease-in-out">
                 Login
               </button>
             </NavLink>
-            <NavLink to="/register" className="cursor-pointer">
+            <NavLink to="/register" className="cursor-pointer" onClick={scrollToTop}>
               <button className="px-4 py-2 text-sm cursor-pointer font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md shadow-sm transition duration-150 ease-in-out">
                 Register
               </button>
@@ -140,59 +146,59 @@ return () => window.removeEventListener("scroll", handleScroll);
             <NavLink 
               className="hover:text-blue-400 font-bold py-2" 
               to="/"
-              onClick={toggleMobileMenu}
+              onClick={() => { toggleMobileMenu(); scrollToTop(); }}
             >
               Home
             </NavLink>
             <NavLink 
               className="hover:text-blue-400 font-bold py-2" 
               to="/dashboard"
-              onClick={toggleMobileMenu}
+              onClick={() => {toggleMobileMenu(); scrollToTop();}}
             >
               Dashboard
             </NavLink>
             <NavLink 
               className="hover:text-blue-400 font-bold py-2" 
               to="/alerts"
-              onClick={toggleMobileMenu}
+              onClick={() => {toggleMobileMenu(); scrollToTop();}}
             >
               Alerts
             </NavLink>
             <NavLink 
               className="hover:text-blue-400 font-bold py-2" 
               to="/reports"
-              onClick={toggleMobileMenu}
+              onClick={() => {toggleMobileMenu(); scrollToTop();}}
             >
               Reports
             </NavLink>
             <NavLink 
               className="hover:text-blue-400 font-bold py-2" 
               to="/activitymap"
-              onClick={toggleMobileMenu}
+              onClick={() => {toggleMobileMenu(); scrollToTop();}}
             >
               Map
             </NavLink>
             <NavLink 
               className="hover:text-blue-400 font-bold py-2" 
               to="/settings"
-              onClick={toggleMobileMenu}
+              onClick={() => {toggleMobileMenu(); scrollToTop();}}
             >
               Settings
             </NavLink>
             <NavLink 
               className="hover:text-blue-400 font-bold py-2" 
               to="visitortracker"
-              onClick={toggleMobileMenu}
+              onClick={() => {toggleMobileMenu(); scrollToTop();}}
             >
               IP Logger
             </NavLink>
             <div className="flex space-x-4 pt-2">
-              <NavLink to="/login" className="w-full" onClick={toggleMobileMenu}>
+              <NavLink to="/login" className="w-full" onClick={() => {toggleMobileMenu(); scrollToTop();}}>
                 <button className="w-full px-4 py-2 text-sm font-medium bg-gray-400 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition duration-150 ease-in-out">
                   Login
                 </button>
               </NavLink>
-              <NavLink to="/register" className="w-full" onClick={toggleMobileMenu}>
+              <NavLink to="/register" className="w-full" onClick={() => {toggleMobileMenu(); scrollToTop();}}>
                 <button className="w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md shadow-sm transition duration-150 ease-in-out">
                   Register
                 </button>
@@ -211,7 +217,7 @@ return () => window.removeEventListener("scroll", handleScroll);
                   <span className="absolute -top-2 -right-2 bg-red-500 text-xs rounded-full h-5 w-5 flex items-center justify-center">
                     3
                   </span>
-                  <NavLink to="/alerts" onClick={toggleMobileMenu}>
+                  <NavLink to="/alerts" onClick={() => {toggleMobileMenu(); scrollToTop();}}>
                     <svg
                       className="w-7 h-7"
                       fill="none"
