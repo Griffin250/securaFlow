@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import securaFlowLogo from '../../assets/logo/securaflow.png'; 
 import {
   faShieldAlt,
   faUserLock,
@@ -9,19 +10,17 @@ import {
   faServer,
   faCogs,
 } from "@fortawesome/free-solid-svg-icons";
+import Companies from "../Companies";
 
 const Home = () => {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
       <div className="container mx-auto px-6 py-24 text-center">
-        <div className="max-w-4xl mx-auto  bg-gray-50 shadow-lg rounded-xl p-8 border border-blue-500 transition-all hover:shadow-lg hover:shadow-blue-500/10">
+        <div className="max-w-4xl mx-auto  bg-gray-50 shadow-lg rounded-xl p-4 border border-blue-500 transition-all hover:shadow-lg hover:shadow-blue-500/10">
           <div className="flex justify-center mb-8">
-            <div className="bg-blue-100 p-4 rounded-full border border-blue-200">
-              <FontAwesomeIcon
-                icon={faShieldAlt}
-                className="w-12 h-12 text-blue-600"
-              />
+            <div className="bg-blue-100 p-2 rounded-full border border-blue-200">
+            <img src={securaFlowLogo} className="w-16 h-16"/>
             </div>
           </div>
 
@@ -58,6 +57,7 @@ const Home = () => {
         </div>
       </div>
 
+<Companies />
       {/* Features Section */}
       <div className="container mx-auto px-6 py-16">
         <h2 className="md:text-3xl font-bold text-center mb-16">

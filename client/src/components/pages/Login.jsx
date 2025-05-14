@@ -103,17 +103,16 @@ const Login = () => {
         </div>
         <div className="relative flex justify-center text-sm">
           <span className="px-2 bg-white text-gray-500">
-            Don't have an account yet?
+            Don't have an account yet?{" "}
+            <Link
+              to="/register"
+              className="font-medium text-blue-600 hover:text-blue-500"
+            >
+              Register here!
+            </Link>
           </span>
         </div>
-        <div className="mt-6 text-center">
-          <Link
-            to="/register"
-            className="font-medium text-blue-600 hover:text-blue-500"
-          >
-            Register here!
-          </Link>
-        </div>
+        <div className="mt-6 text-center"></div>
       </form>
 
       <div className="mt-6">

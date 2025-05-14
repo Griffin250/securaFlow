@@ -10,28 +10,29 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const scrollToTop = () => {
     window.scrollTo({
-      top:0,
-      behavior:"smooth"
-    })
-  }
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  useEffect(() =>{
-const handleScroll = () =>{
-  if(window.scrollY > lastScrollY){
-    setShowNavbar(false);
-  } else 
-  setShowNavbar(true);
-  setLastScrollY(window.scrollY);
-};
-window.addEventListener("scroll", handleScroll);
-return () => window.removeEventListener("scroll", handleScroll);
-  },[lastScrollY])
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        setShowNavbar(false);
+      } else setShowNavbar(true);
+      setLastScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   return (
-    <nav className={`bg-gray-900 text-white fixed p-4 shadow-md w-full transition-transform z-50 duration-300 ${showNavbar ?  "translate-y-0" : "-translate-y-full"}`}>
+    <nav
+      className={`bg-gray-900 text-white fixed p-4 shadow-md w-full transition-transform z-50 duration-300 ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}
+    >
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo Section */}
         <div className="flex items-center space-x-2">
@@ -57,34 +58,71 @@ return () => window.removeEventListener("scroll", handleScroll);
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-6">
-          <NavLink className="hover:text-blue-400 font-bold" to="/" onClick={scrollToTop}>
+          <NavLink
+            className="hover:text-blue-400 font-bold"
+            to="/"
+            onClick={scrollToTop}
+          >
             Home
           </NavLink>
-          <NavLink className="hover:text-blue-400 font-bold" to="/dashboard" onClick={scrollToTop}>
+          <NavLink
+            className="hover:text-blue-400 font-bold"
+            to="/dashboard"
+            onClick={scrollToTop}
+          >
             Dashboard
           </NavLink>
-          <NavLink className="hover:text-blue-400 font-bold" to="/alerts" onClick={scrollToTop}>
+          <NavLink
+            className="hover:text-blue-400 font-bold"
+            to="/alerts"
+            onClick={scrollToTop}
+          >
             Alerts
           </NavLink>
-          <NavLink className="hover:text-blue-400 font-bold" to="/reports" onClick={scrollToTop}>
+          <NavLink
+            className="hover:text-blue-400 font-bold"
+            to="/reports"
+            onClick={scrollToTop}
+          >
             Reports
           </NavLink>
-          <NavLink className="hover:text-blue-400 font-bold" to="/activitymap" onClick={scrollToTop}>
+          <NavLink
+            className="hover:text-blue-400 font-bold"
+            to="/activitymap"
+            onClick={scrollToTop}
+          >
             Map
           </NavLink>
-          <NavLink className="hover:text-blue-400 font-bold" to="/settings" onClick={scrollToTop}>
-            Settings
-          </NavLink>
-          <NavLink className="hover:text-blue-400 font-bold" to="visitortracker" onClick={scrollToTop}>
+
+          <NavLink
+            className="hover:text-blue-400 font-bold"
+            to="visitortracker"
+            onClick={scrollToTop}
+          >
             IP Logger
           </NavLink>
+          <NavLink
+            className="hover:text-blue-400 font-bold"
+            to="/settings"
+            onClick={scrollToTop}
+          >
+            Settings
+          </NavLink>
           <div className="flex space-x-4">
-            <NavLink to="/login" className="cursor-pointer" onClick={scrollToTop}>
+            <NavLink
+              to="/login"
+              className="cursor-pointer"
+              onClick={scrollToTop}
+            >
               <button className="px-4 py-2 text-sm cursor-pointer font-medium bg-gray-400 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition duration-150 ease-in-out">
                 Login
               </button>
             </NavLink>
-            <NavLink to="/register" className="cursor-pointer" onClick={scrollToTop}>
+            <NavLink
+              to="/register"
+              className="cursor-pointer"
+              onClick={scrollToTop}
+            >
               <button className="px-4 py-2 text-sm cursor-pointer font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md shadow-sm transition duration-150 ease-in-out">
                 Register
               </button>
@@ -98,8 +136,8 @@ return () => window.removeEventListener("scroll", handleScroll);
             onClick={toggleMobileMenu}
             className="text-white focus:outline-none"
           >
-            <FontAwesomeIcon 
-              icon={isMobileMenuOpen ? faTimes : faBars} 
+            <FontAwesomeIcon
+              icon={isMobileMenuOpen ? faTimes : faBars}
               className="w-6 h-6"
             />
           </button>
@@ -143,62 +181,99 @@ return () => window.removeEventListener("scroll", handleScroll);
       {isMobileMenuOpen && (
         <div className="md:hidden bg-gray-800 mt-4 rounded-lg p-4">
           <div className="flex flex-col space-y-4">
-            <NavLink 
-              className="hover:text-blue-400 font-bold py-2" 
+            <NavLink
+              className="hover:text-blue-400 font-bold py-2"
               to="/"
-              onClick={() => { toggleMobileMenu(); scrollToTop(); }}
+              onClick={() => {
+                toggleMobileMenu();
+                scrollToTop();
+              }}
             >
               Home
             </NavLink>
-            <NavLink 
-              className="hover:text-blue-400 font-bold py-2" 
+            <NavLink
+              className="hover:text-blue-400 font-bold py-2"
               to="/dashboard"
-              onClick={() => {toggleMobileMenu(); scrollToTop();}}
+              onClick={() => {
+                toggleMobileMenu();
+                scrollToTop();
+              }}
             >
               Dashboard
             </NavLink>
-            <NavLink 
-              className="hover:text-blue-400 font-bold py-2" 
+            <NavLink
+              className="hover:text-blue-400 font-bold py-2"
               to="/alerts"
-              onClick={() => {toggleMobileMenu(); scrollToTop();}}
+              onClick={() => {
+                toggleMobileMenu();
+                scrollToTop();
+              }}
             >
               Alerts
             </NavLink>
-            <NavLink 
-              className="hover:text-blue-400 font-bold py-2" 
+            <NavLink
+              className="hover:text-blue-400 font-bold py-2"
               to="/reports"
-              onClick={() => {toggleMobileMenu(); scrollToTop();}}
+              onClick={() => {
+                toggleMobileMenu();
+                scrollToTop();
+              }}
             >
               Reports
             </NavLink>
-            <NavLink 
-              className="hover:text-blue-400 font-bold py-2" 
+            <NavLink
+              className="hover:text-blue-400 font-bold py-2"
               to="/activitymap"
-              onClick={() => {toggleMobileMenu(); scrollToTop();}}
+              onClick={() => {
+                toggleMobileMenu();
+                scrollToTop();
+              }}
             >
               Map
             </NavLink>
-            <NavLink 
-              className="hover:text-blue-400 font-bold py-2" 
-              to="/settings"
-              onClick={() => {toggleMobileMenu(); scrollToTop();}}
-            >
-              Settings
-            </NavLink>
-            <NavLink 
-              className="hover:text-blue-400 font-bold py-2" 
+           
+            <NavLink
+              className="hover:text-blue-400 font-bold py-2"
               to="visitortracker"
-              onClick={() => {toggleMobileMenu(); scrollToTop();}}
+              onClick={() => {
+                toggleMobileMenu();
+                scrollToTop();
+              }}
             >
               IP Logger
             </NavLink>
+
+             <NavLink
+              className="hover:text-blue-400 font-bold py-2"
+              to="/settings"
+              onClick={() => {
+                toggleMobileMenu();
+                scrollToTop();
+              }}
+            >
+              Settings
+            </NavLink>
             <div className="flex space-x-4 pt-2">
-              <NavLink to="/login" className="w-full" onClick={() => {toggleMobileMenu(); scrollToTop();}}>
+              <NavLink
+                to="/login"
+                className="w-full"
+                onClick={() => {
+                  toggleMobileMenu();
+                  scrollToTop();
+                }}
+              >
                 <button className="w-full px-4 py-2 text-sm font-medium bg-gray-400 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition duration-150 ease-in-out">
                   Login
                 </button>
               </NavLink>
-              <NavLink to="/register" className="w-full" onClick={() => {toggleMobileMenu(); scrollToTop();}}>
+              <NavLink
+                to="/register"
+                className="w-full"
+                onClick={() => {
+                  toggleMobileMenu();
+                  scrollToTop();
+                }}
+              >
                 <button className="w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md shadow-sm transition duration-150 ease-in-out">
                   Register
                 </button>
@@ -211,13 +286,22 @@ return () => window.removeEventListener("scroll", handleScroll);
               </label>
               <div className="flex items-center space-x-4">
                 <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">
-                  <FontAwesomeIcon icon={faUser} className="text-white text-xl" />
+                  <FontAwesomeIcon
+                    icon={faUser}
+                    className="text-white text-xl"
+                  />
                 </div>
                 <div className="relative">
                   <span className="absolute -top-2 -right-2 bg-red-500 text-xs rounded-full h-5 w-5 flex items-center justify-center">
                     3
                   </span>
-                  <NavLink to="/alerts" onClick={() => {toggleMobileMenu(); scrollToTop();}}>
+                  <NavLink
+                    to="/alerts"
+                    onClick={() => {
+                      toggleMobileMenu();
+                      scrollToTop();
+                    }}
+                  >
                     <svg
                       className="w-7 h-7"
                       fill="none"

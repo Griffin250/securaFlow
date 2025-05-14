@@ -14,6 +14,7 @@ import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
 
 import ActivityMap from "./components/pages/ActivityMap";
+import Companies from "./components/Companies";
 const App = () => {
   return (
     <div>
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/activitymap" element={<ActivityMap/>}/>
+        <Route path="/companies" element={<Companies/>}/>
       </Routes>
       <Footer />
     </div>
