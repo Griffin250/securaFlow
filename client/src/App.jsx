@@ -15,6 +15,11 @@ import Register from "./components/pages/Register";
 
 import ActivityMap from "./components/pages/ActivityMap";
 import Companies from "./components/Companies";
+import { Features } from "./components/features/Features";
+import TrackerDashboard from "./components/layouts/TrackerDashboard";
+
+import CreateTracker from "./components/layouts/CreateTracker";
+import { TrackerTest } from "./components/layouts/TrackerTest";
 const App = () => {
   return (
     <div>
@@ -30,8 +35,12 @@ const App = () => {
         <Route path="/visitortracker" element={<VisitorTracker />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/activitymap" element={<ActivityMap/>}/>
-        <Route path="/companies" element={<Companies/>}/>
+        <Route path="/activitymap" element={<ActivityMap />} />
+        <Route path="/companies" element={<Companies />} />
+        <Route path="/features" element={<Features />} />
+        <Route path="/trackerDashboard" element={<TrackerDashboard trackerId="6659a8123b0f42a21c94e1c8"/>} />
+        <Route path="/createTrackers" element={<CreateTracker />} />
+        <Route path="/trackerTest" element={<TrackerTest />} />
       </Routes>
       <Footer />
     </div>

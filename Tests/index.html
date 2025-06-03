@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Logger</title>
+</head>
+<body>
+    
+    <h1>Image Logger</h1>
+    <p>This page will log images to the console.</p>
+<img src="https://yourdomain.com/t/zzSivaO.png" style="display:none;" />
+<img src="https://yourdomain.com/t/B-4nOI9.png" style="display:none;" />
+<img src="https://yourdomain.com/t/ab5Q5Ug.png" style="display:none;" />
+<img src="https://yourdomain.com/t/ObwEaHz.png" style="display:none;" />
+<img src="https://securaflow.ai/t/Vml19PJ.png" style="display:none;" />
+
+    <script>
+        // Function to log images
+        function logImages() {
+            const images = document.querySelectorAll('img');
+            images.forEach((img, index) => {
+                console.log(`Image ${index + 1}:`, img.src);
+            });
+        }
+
+        // Call the function to log images
+        logImages();
+    </script>
+</body>
+</html>

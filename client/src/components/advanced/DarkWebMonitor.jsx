@@ -1,5 +1,6 @@
 import { Badge } from './ui'; // Your custom badge component
-
+import { useState, useEffect } from 'react';
+import React from 'react';
 export default function DarkWebMonitor() {
   const [breaches, setBreaches] = useState([]);
   const [isLoading, setIsLoading] = useState(true);

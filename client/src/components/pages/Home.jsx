@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import securaFlowLogo from '../../assets/logo/securaflow.png'; 
 import {
   faShieldAlt,
   faUserLock,
@@ -11,6 +10,8 @@ import {
   faCogs,
 } from "@fortawesome/free-solid-svg-icons";
 import Companies from "../Companies";
+import Lottie from "lottie-react";
+import AlertAnimation from "../ui/AlertAnimation.json";
 
 const Home = () => {
   return (
@@ -18,26 +19,30 @@ const Home = () => {
       {/* Hero Section */}
       <div className="container mx-auto px-6 py-24 text-center">
         <div className="max-w-4xl mx-auto  bg-gray-50 shadow-lg rounded-xl p-4 border border-blue-500 transition-all hover:shadow-lg hover:shadow-blue-500/10">
-          <div className="flex justify-center mb-8">
+          {/*
+          <div className="flex justify-center mb-4">
             <div className="bg-blue-100 p-2 rounded-full border border-blue-200">
-            <img src={securaFlowLogo} className="w-16 h-16"/>
+             <img src={securaFlowLogo} className="w-16 h-16"/> 
             </div>
+           
           </div>
-
-          <h1 className="text-5xl font-bold mb-6 text-gray-900">SecuraFlow</h1>
-          <p className="text-xl text-gray-600 mb-10">
-            This is an Advanced security monitoring and threat detection for modern
-            applications
+    */}
+          <h1 className="text-5xl font-bold mb-2 text-gray-900">SecuraFlow</h1>
+          <Lottie
+            animationData={AlertAnimation}
+            loop={true}
+            className="w-5/12 m-auto"
+          />
+          <p className="text-xl text-gray-600 mb-2 font-bold">
+            This is an Advanced AI security monitoring and threat detection{" "}
+            <br /> Agency for modern applications, both cloud and on-premise.
           </p>
-          <p className="text-xl text-gray-600 mb-6">
-            Enterprise-Grade Security Intelligence Platform
-          </p>
-          <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto ">
-            Secura Flow provides comprehensive protection for your digital
-            assets with real-time threat detection, automated compliance
-            reporting, and intelligent access controls. Our AI-powered platform
-            gives security teams complete visibility across cloud, on-premise,
-            and hybrid environments.
+          <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto ">
+            securaFlow provides comprehensive protection for your digital assets
+            with real-time threat detection, automated compliance reporting, and
+            intelligent access controls. Our AI-powered platform gives security
+            teams complete visibility across cloud, on-premise, and hybrid
+            environments.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -57,7 +62,7 @@ const Home = () => {
         </div>
       </div>
 
-<Companies />
+      <Companies />
       {/* Features Section */}
       <div className="container mx-auto px-6 py-16">
         <h2 className="md:text-3xl font-bold text-center mb-16">

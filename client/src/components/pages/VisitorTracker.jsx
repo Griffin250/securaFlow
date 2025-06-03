@@ -146,7 +146,7 @@ const VisitorTracker = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">Visitor Activity Tracker</h1>
+        <h1 className="text-2xl font-bold text-gray-800 m-16">Visitor Activity Tracker</h1>
         <div className="flex space-x-4">
           <select 
             className="px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"

@@ -1,1 +1,10 @@
+
+# .gitignore
+node_modules
+dist
 .env
+*.log
+Dockerfile.dev
+.vscode
+__pycache__/
+*.sqlite3

@@ -1,11 +1,6 @@
-import {
-  faUser,
-  faBars,
-  faTimes,
-  faChevronDown,
-} from "@fortawesome/free-solid-svg-icons";
+import { faUser, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
@@ -13,70 +8,30 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [isFeaturesOpen, setIsFeaturesOpen] = useState(false);
-  const dropdownRef = useRef(null);
-
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
-
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const toggleFeatures = () => {
-    setIsFeaturesOpen(!isFeaturesOpen);
-  };
-
-  const closeAllMenus = () => {
-    setIsMobileMenuOpen(false);
-    setIsFeaturesOpen(false);
   };
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
         setShowNavbar(false);
-      } else {
-        setShowNavbar(true);
-      }
+      } else setShowNavbar(true);
       setLastScrollY(window.scrollY);
     };
-
-    // Close dropdown when clicking outside
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsFeaturesOpen(false);
-      }
-    };
-
     window.addEventListener("scroll", handleScroll);
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
-
-  const featureLinks = [
-    { name: "Features", path: "/features" },
-    { name: "Settings", path: "/settings" },
-    { name: "Speed Test", path: "/speedTest" },
-    { name: "Link Expander", path: "/linkExpander" },
-    { name: "Invisible Image Logger", path: "/createTrackers" },
-    { name: "Mac Address Lookup", path: "/macAddressLookup" },
-    { name: "IP Subnet Calculator ", path: "https://ipsc.onrender.com/", },
-  ];
 
   return (
     <nav
-      className={`bg-gray-900 text-white fixed p-4 shadow-md w-full transition-transform z-50 duration-300 ${
-        showNavbar ? "translate-y-0" : "-translate-y-full"
-      }`}
+      className={`bg-gray-900 text-white fixed p-4 shadow-md w-full transition-transform z-50 duration-300 ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}
     >
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo Section */}
@@ -95,82 +50,75 @@ const Navbar = () => {
             />
           </svg>
           <span className="text-3xl font-bold">
-            <NavLink to="/" className="title" onClick={closeAllMenus}>
+            <NavLink to="/" className="title">
               SecuraFlow
             </NavLink>
           </span>
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-6 items-center">
+        <div className="hidden md:flex space-x-6">
           <NavLink
             className="hover:text-blue-400 font-bold"
             to="/"
-            onClick={closeAllMenus}
+            onClick={scrollToTop}
           >
             Home
           </NavLink>
           <NavLink
             className="hover:text-blue-400 font-bold"
             to="/dashboard"
-            onClick={closeAllMenus}
+            onClick={scrollToTop}
           >
             Dashboard
           </NavLink>
           <NavLink
             className="hover:text-blue-400 font-bold"
             to="/alerts"
-            onClick={closeAllMenus}
+            onClick={scrollToTop}
           >
             Alerts
           </NavLink>
           <NavLink
             className="hover:text-blue-400 font-bold"
             to="/reports"
-            onClick={closeAllMenus}
+            onClick={scrollToTop}
           >
             Reports
           </NavLink>
-
-          {/* Features Dropdown */}
-          <div className="relative" ref={dropdownRef}>
-            <button
-              onClick={toggleFeatures}
-              className="hover:text-blue-400 font-bold flex items-center cursor-pointer"
-            >
-              Tools
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                className={`ml-1 transition-transform ${
-                  isFeaturesOpen ? "transform rotate-180" : ""
-                }`}
-                size="xs"
-              />
-            </button>
-            {isFeaturesOpen && (
-              <div className="absolute left-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg py-1 z-50 border border-gray-700">
-                {featureLinks.map((link) => (
-                  <NavLink
-                    key={link.path}
-                    to={link.path}
-                    className="block px-4 py-2 text-sm hover:bg-gray-700 hover:text-blue-400"
-                    onClick={() => {
-                      closeAllMenus();
-                      scrollToTop();
-                    }}
-                  >
-                    {link.name}
-                  </NavLink>
-                ))}
-              </div>
-            )}
-          </div>
-
+          <NavLink
+            className="hover:text-blue-400 font-bold"
+            to="/activitymap"
+            onClick={scrollToTop}
+          >
+            Map
+          </NavLink>
+          <NavLink
+            className="hover:text-blue-400 font-bold"
+            to="/traffic"
+            onClick={scrollToTop}
+          >
+            Traffic
+          </NavLink>
+          <NavLink
+            className="hover:text-blue-400 font-bold"
+            to="features"
+            onClick={scrollToTop}
+          >
+           Features
+          </NavLink>
+          <NavLink
+            className="hover:text-blue-400 font-bold"
+            to="/settings"
+            onClick={scrollToTop}
+          >
+            Settings
+          </NavLink>
           <div className="flex space-x-4">
             <NavLink
               to="/login"
               className="cursor-pointer"
-              onClick={closeAllMenus}
+              onClick={scrollToTop}
             >
               <button className="px-4 py-2 text-sm cursor-pointer font-medium bg-gray-400 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition duration-150 ease-in-out">
                 Login
@@ -179,7 +127,7 @@ const Navbar = () => {
             <NavLink
               to="/register"
               className="cursor-pointer"
-              onClick={closeAllMenus}
+              onClick={scrollToTop}
             >
               <button className="px-4 py-2 text-sm cursor-pointer font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md shadow-sm transition duration-150 ease-in-out">
                 Register
@@ -216,7 +164,7 @@ const Navbar = () => {
             <span className="absolute -top-2 -right-2 bg-red-500 text-xs rounded-full h-5 w-5 flex items-center justify-center">
               3
             </span>
-            <NavLink to="/alerts" className="bell-icon" onClick={closeAllMenus}>
+            <NavLink to="/alerts" className="bell-icon">
               <svg
                 className="w-7 h-7"
                 fill="none"
@@ -242,73 +190,103 @@ const Navbar = () => {
             <NavLink
               className="hover:text-blue-400 font-bold py-2"
               to="/"
-              onClick={closeAllMenus}
+              onClick={() => {
+                toggleMobileMenu();
+                scrollToTop();
+              }}
             >
               Home
             </NavLink>
             <NavLink
               className="hover:text-blue-400 font-bold py-2"
               to="/dashboard"
-              onClick={closeAllMenus}
+              onClick={() => {
+                toggleMobileMenu();
+                scrollToTop();
+              }}
             >
               Dashboard
             </NavLink>
             <NavLink
               className="hover:text-blue-400 font-bold py-2"
               to="/alerts"
-              onClick={closeAllMenus}
+              onClick={() => {
+                toggleMobileMenu();
+                scrollToTop();
+              }}
             >
               Alerts
             </NavLink>
             <NavLink
               className="hover:text-blue-400 font-bold py-2"
               to="/reports"
-              onClick={closeAllMenus}
+              onClick={() => {
+                toggleMobileMenu();
+                scrollToTop();
+              }}
             >
               Reports
             </NavLink>
-
-            {/* Mobile Features Dropdown */}
-            <div className="relative">
-              <button
-                onClick={toggleFeatures}
-                className="hover:text-blue-400 font-bold py-2 flex items-center w-full justify-between"
-              >
-                <span>Tools</span>
-                <FontAwesomeIcon
-                  icon={faChevronDown}
-                  className={`ml-1 transition-transform ${
-                    isFeaturesOpen ? "transform rotate-180" : ""
-                  }`}
-                  size="xs"
-                />
-              </button>
-              {isFeaturesOpen && (
-                <div className="ml-4 mt-2 space-y-2">
-                  {featureLinks.map((link) => (
-                    <NavLink
-                      key={link.path}
-                      to={link.path}
-                      className="block py-1 text-sm hover:text-blue-400"
-                      onClick={closeAllMenus}
-                    >
-                      {link.name}
-                    </NavLink>
-                  ))}
-                </div>
-              )}
-            </div>
-
             <NavLink
               className="hover:text-blue-400 font-bold py-2"
+              to="/activitymap"
+              onClick={() => {
+                toggleMobileMenu();
+                scrollToTop();
+              }}
+            >
+              Map
+            </NavLink>
+                   <NavLink
+              className="hover:text-blue-400 font-bold py-2"
+              to="/traffic"
+              onClick={() => {
+                toggleMobileMenu();
+                scrollToTop();
+              }}
+            >
+              Traffic
+            </NavLink>
+                  <NavLink
+              className="hover:text-blue-400 font-bold py-2"
+              to="/HealthChecks"
+              onClick={() => {
+                toggleMobileMenu();
+                scrollToTop();
+              }}
+            >
+              HealthChecks
+            </NavLink>
+            <NavLink
+              className="hover:text-blue-400 font-bold py-2"
+              to="visitortracker"
+              onClick={() => {
+                toggleMobileMenu();
+                scrollToTop();
+              }}
+            >
+              IP Logger
+            </NavLink>
+
+             <NavLink
+              className="hover:text-blue-400 font-bold py-2"
               to="/settings"
-              onClick={closeAllMenus}
+              onClick={() => {
+                toggleMobileMenu();
+                scrollToTop();
+              }}
             >
               Settings
             </NavLink>
-
             <div className="flex space-x-4 pt-2">
-              <NavLink to="/login" className="w-full" onClick={closeAllMenus}>
+              <NavLink
+                to="/login"
+                className="w-full"
+                onClick={() => {
+                  toggleMobileMenu();
+                  scrollToTop();
+                }}
+              >
                 <button className="w-full px-4 py-2 text-sm font-medium bg-gray-400 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition duration-150 ease-in-out">
                   Login
                 </button>
@@ -316,7 +294,10 @@ const Navbar = () => {
               <NavLink
                 to="/register"
                 className="w-full"
-                onClick={closeAllMenus}
+                onClick={() => {
+                  toggleMobileMenu();
+                  scrollToTop();
+                }}
               >
                 <button className="w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md shadow-sm transition duration-150 ease-in-out">
                   Register
@@ -339,7 +320,13 @@ const Navbar = () => {
                   <span className="absolute -top-2 -right-2 bg-red-500 text-xs rounded-full h-5 w-5 flex items-center justify-center">
                     3
                   </span>
-                  <NavLink to="/alerts" onClick={closeAllMenus}>
+                  <NavLink
+                    to="/alerts"
+                    onClick={() => {
+                      toggleMobileMenu();
+                      scrollToTop();
+                    }}
+                  >
                     <svg
                       className="w-7 h-7"
                       fill="none"

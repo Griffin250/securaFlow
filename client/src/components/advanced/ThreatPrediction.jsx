@@ -16,7 +16,7 @@ export default function ThreatPrediction() {
 
   return (
     <div className="bg-gray-800 rounded-xl p-6">
-      <h3 className="text-xl font-bold text-white mb-4">Threat Weather Map</h3>
+      <h3 className="text-xl font-bold text-white mb-4">Threat Prediction Map</h3>
       {threatData ? (
         <div className="h-64">
           <Chart 
