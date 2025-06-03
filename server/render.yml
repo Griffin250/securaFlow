@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: secura-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: MONGO_URI
+         value: ${MONGO_URI}
+      - key: PORT
+        value: 5000
